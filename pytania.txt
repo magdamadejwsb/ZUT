@@ -1,0 +1,15 @@
+Czym jest zmienna w Pythonie?
+Jaka jest różnica między listą a krotką?
+Do czego służy instrukcja if?
+Jak działa pętla for?
+Czym jest funkcja?
+Do czego służy return?
+Co to jest moduł?
+Jak importujemy moduł w Pythonie?
+Czym jest słownik?
+Jak obsługiwać wyjątki?
+Co robi funkcja len()?
+Do czego służy instrukcja while?
+Czym jest środowisko wirtualne?
+Co oznacza parametr funkcji?
+Czym różni się == od =?
