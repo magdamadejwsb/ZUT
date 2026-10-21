@@ -47,9 +47,29 @@ def wczytaj_dane():
 
         wybrany_plik = pliki[numer - 1]
 
+        try:
+            df = pd.read_csv(wybrany_plik)
+        except pd.errors.ParserError as blad:
+            print(colored(f"Błąd wczytania pliku: {blad}", "red"))    
+            return None
+
         print(colored(f"\nWczytano plik: {wybrany_plik.name}", "green"))
+        print(f"Liczba wierszy: {len(df)}")
+
+        return df
 
 
+def wyswietl_dane(df):
+    if df is None:
+        print(colored("\nNajpierw wczytaj plik CSV", "red"))
+        return
 
-wczytaj_dane()    
+    print("\n***** PODGLĄD DANYCH *****")
 
+    print("Pierwsze 10 wierszy")
+    print(df.head(10).to_string(index=False))
+
+    print("\nInformacje o zbiorze:")
+    print(f"Liczba rekordów: {df.shape[0]}")
+    print(f"Liczba kolumn: {df.shape[1]}")
+    print(f"Koluny: {', '.join(df.columns)}")
